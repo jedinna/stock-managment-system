@@ -1,25 +1,23 @@
 package controllers.stock_managmnent;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.LoadException;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class HelloApplication extends Application {
     @Override
-    public void start(Stage stage) throws LoadException  {
+    public void start(Stage stage) throws Exception  {
 
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
-        Scene scene = null;
-        try {
-            scene = new Scene(fxmlLoader.load(), 520, 440);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Scene scene = new Scene(fxmlLoader.load(), 520, 440);
         stage.setTitle("Stock managmnent");
         stage.setScene(scene);
         stage.show();
@@ -28,4 +26,13 @@ public class HelloApplication extends Application {
     public static void main(String[] args) {
         launch();
     }
+
+    public void AddOnAction(ActionEvent event) {
+    }
+
+    void showOnaction(ActionEvent event) {
+
+    }
+
+
 }

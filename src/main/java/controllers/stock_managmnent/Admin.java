@@ -1,8 +1,9 @@
 package controllers.stock_managmnent;
 
-import javafx.application.Application;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
@@ -15,7 +16,7 @@ import javafx.scene.control.TextField;
 
 import java.sql.*;
 
-import java.io.IOException;
+
 import java.sql.Connection;
 
 public class Admin {
@@ -37,8 +38,32 @@ public class Admin {
 
 
         if(usernametextfield.getText().isBlank()==false && passtextfield.getText().isBlank()==false) {
-            LoginMessageLabel.setText("you try to connect");
-            DbConnection();
+            DbConnection dbcon = new DbConnection();
+            Connection con = dbcon.connMethod();
+            String SQL = "select * from ADMIN";
+            try {
+                Statement stmt = con.createStatement();
+                ResultSet rs = stmt.executeQuery(SQL);
+
+                while (rs.next()) {
+                    if ((rs.getString(1).equals(usernametextfield.getText())) && (rs.getString(2).equals(passtextfield.getText()))) {
+
+                        LoginMessageLabel.setText("congrates");
+                        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Operation.fxml"));
+                        Scene sc = new Scene(fxmlLoader.load(),600.,400);
+                        Stage st = (Stage) ((Node)event.getSource()).getScene().getWindow();
+                        st.setScene(sc);
+                        st.show();
+
+                    } else {
+
+                        LoginMessageLabel.setText("invalid user or password");
+                    }
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }else{
             LoginMessageLabel.setText("please enter user and password");
 
@@ -51,27 +76,7 @@ public class Admin {
     }
 
     public void DbConnection() throws ClassNotFoundException, SQLException {
-        DbConnection dbcon = new DbConnection();
-        Connection con = dbcon.connMethod();
-        String SQL = "select * from ADMIN"; //where NAME= ' " +usernametextfield.getText()+"  ' and PASSWORD= ' "+passtextfield.getText() +" ' ";
 
-        try {
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery(SQL);
-
-            while (rs.next()) {
-                if ((rs.getString(1).equals(usernametextfield.getText())) && (rs.getString(2).equals(passtextfield.getText()))) {
-
-                    LoginMessageLabel.setText("congrates");
-                } else {
-
-                    LoginMessageLabel.setText("invalid user or password");
-                }
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
     }
     }

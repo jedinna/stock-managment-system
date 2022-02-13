@@ -3,6 +3,7 @@ package controllers.stock_managmnent;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -20,12 +21,12 @@ public class login {
     @FXML
     private Button customerbtn;
 
-  public void handlebtn1() throws Exception{
+  public void handlebtn1(ActionEvent ev) throws Exception{
       FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Admin.fxml"));
-
-      Stage stg = (Stage) adminbtn.getScene().getWindow();
-      //Parent root = null;
-      stg.setScene(new Scene(fxmlLoader.load()  ,750,500));
+Scene sc = new Scene(fxmlLoader.load(),600.,400);
+Stage st = (Stage) ((Node)ev.getSource()).getScene().getWindow();
+st.setScene(sc);
+st.show();
   }
 
     public void exitbuttonOnAction(ActionEvent event){

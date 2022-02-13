@@ -5,6 +5,10 @@
  */
 package controllers.stock_managmnent;
 
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import javax.swing.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,8 +24,10 @@ import java.sql.SQLException;
     private static final String user = "stock";
     private static final String password = "1544";
     private static final String driver = "oracle.jdbc.driver.OracleDriver";
-    Connection con = null;
-    public Connection connMethod() throws ClassNotFoundException {
+    private static Connection con = null;
+
+
+    public static Connection connMethod() throws ClassNotFoundException {
         Class.forName(driver);
 
 
@@ -35,4 +41,8 @@ import java.sql.SQLException;
         return con;
     }
 
+
 }
+
+
+
