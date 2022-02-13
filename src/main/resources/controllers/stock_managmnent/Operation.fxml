@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.stock_managmnent.itemsController">
+    <children>
+        <Label layoutX="59.0" layoutY="7.0" prefHeight="54.0" prefWidth="296.0" text="OPERATIONS">
+            <font>
+                <Font name="System Bold" size="36.0" />
+            </font>
+        </Label>
+        <VBox layoutX="9.0" layoutY="58.0" prefHeight="336.0" prefWidth="144.0">
+            <children>
+                <Label fx:id="idLBL" text="ID" />
+                <TextField fx:id="IdTextfield" />
+                <Label layoutX="10.0" layoutY="10.0" text="NAME" />
+                <TextField fx:id="NameTextfield" layoutX="10.0" layoutY="28.0" />
+                <Label layoutX="10.0" layoutY="53.0" text="AMOUNT" />
+                <TextField fx:id="amountTextfield" layoutX="10.0" layoutY="71.0" />
+                <Label layoutX="10.0" layoutY="96.0" text="PRICE" />
+                <TextField fx:id="pricetextfield" layoutX="10.0" layoutY="114.0" />
+            </children>
+        </VBox>
+        <Button fx:id="removeBtn" layoutX="217.0" layoutY="181.0" mnemonicParsing="false" onAction="#removeBtnONaction" text="REMOVE" />
+        <Button fx:id="showtbl" layoutX="217.0" layoutY="239.0" mnemonicParsing="false" onAction="#tshow" text="SHOW_TABLE" />
+          <Button fx:id="addbtn" layoutX="227.0" layoutY="84.0" mnemonicParsing="false" onAction="#AddOnAction" text="ADD" />
+      <Button fx:id="updatebtn" layoutX="222.0" layoutY="134.0" mnemonicParsing="false" onAction="#updatebtnOnAction" text="update" />
+    </children>
+</AnchorPane>

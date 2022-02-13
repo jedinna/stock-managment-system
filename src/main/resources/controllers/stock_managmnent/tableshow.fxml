@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.stock_managmnent.itemsController">
+   <children>
+      <Label layoutX="179.0" layoutY="3.0" prefHeight="54.0" prefWidth="296.0" text="OPERATIONS">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <VBox layoutX="45.0" layoutY="58.0" prefHeight="336.0" prefWidth="144.0">
+         <children>
+            <Label fx:id="idLBL" text="ID" />
+            <TextField fx:id="IdTextfield" />
+            <Label layoutX="10.0" layoutY="10.0" text="NAME" />
+            <TextField fx:id="NameTextfield" layoutX="10.0" layoutY="28.0" />
+            <Label layoutX="10.0" layoutY="53.0" text="AMOUNT" />
+            <TextField fx:id="amountTextfield" layoutX="10.0" layoutY="71.0" />
+            <Label layoutX="10.0" layoutY="96.0" text="PRICE" />
+            <TextField fx:id="pricetextfield" layoutX="10.0" layoutY="114.0" />
+         </children>
+      </VBox>
+      <Button fx:id="removeBtn" layoutX="280.0" layoutY="200.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="94.0" text="REMOVE">
+         <font>
+            <Font size="16.0" />
+         </font></Button>
+      <Button fx:id="showtbl" layoutX="280.0" layoutY="257.0" mnemonicParsing="false" onAction="#tshow" prefHeight="31.0" prefWidth="134.0" text="SHOW_TABLE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button fx:id="addbtn" layoutX="275.0" layoutY="80.0" mnemonicParsing="false" onAction="#AddOnAction" prefHeight="37.0" prefWidth="89.0" text="ADD">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="updatebtn" layoutX="273.0" layoutY="134.0" mnemonicParsing="false" onAction="#updatebtnOnAction" text="UPDATE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
